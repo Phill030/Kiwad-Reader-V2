@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const revisions: string[] = await invoke("get_revisions");
 export default function App() {
-  let [selectedRevision, setSelectedRevision] = useState<String | undefined>();
+  let [selectedRevision, setSelectedRevision] = useState<string | undefined>();
 
   FocusStyleManager.onlyShowFocusOnTabs();
 
@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <div id="window" className="bp5-dark">
-      {!selectedRevision ?<RevisionSelection revisions={revisions} onRevisionSelected={handleRevisionSelect}/> : <RevisionView/>}
+      {!selectedRevision ? <RevisionSelection revisions={revisions} onRevisionSelected={handleRevisionSelect}/> : <RevisionView revision={selectedRevision}/>}
     </div>
   );
 }

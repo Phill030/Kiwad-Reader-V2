@@ -6,9 +6,9 @@ import { invoke } from "@tauri-apps/api";
 
 
   export default function RevisionSelection(props: any) {
-  const [selectedRevision, setSelectedRevision] = useState<String | undefined>();
+  const [selectedRevision, setSelectedRevision] = useState<string | undefined>();
 
-  const renderRevision: ItemRenderer<String> = (
+  const renderRevision: ItemRenderer<string> = (
     item,
     { handleClick, handleFocus, modifiers }
   ) => {
@@ -30,7 +30,6 @@ import { invoke } from "@tauri-apps/api";
   };
 
   function onClick(_event: MouseEvent) {
-    invoke("revision_selected", { revision: selectedRevision });
     props.onRevisionSelected(selectedRevision);
   }
 
