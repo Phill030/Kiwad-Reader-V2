@@ -4,9 +4,8 @@ import { MouseEvent, useState } from "react";
 import "../scss/RevisionSelectionScreen.scss";
 import { invoke } from "@tauri-apps/api";
 
-const revisions: string[] = await invoke("get_revisions");
 
-export default function RevisionSelection() {
+  export default function RevisionSelection(props: any) {
   const [selectedRevision, setSelectedRevision] = useState<String | undefined>();
 
   const renderRevision: ItemRenderer<String> = (
@@ -31,14 +30,14 @@ export default function RevisionSelection() {
   };
 
   function onClick(_event: MouseEvent) {
-    console.log("Selected revision: "+selectedRevision);
     invoke("revision_selected", { revision: selectedRevision });
+    props.onRevisionSelected(selectedRevision);
   }
 
   return (
     <div className="revision-selection-screen">
       <Select
-        items={revisions}
+        items={props.revisions}
         itemRenderer={renderRevision}
         onItemSelect={setSelectedRevision}
         filterable={false}
