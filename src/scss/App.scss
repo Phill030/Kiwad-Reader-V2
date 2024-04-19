@@ -32,3 +32,17 @@ body {
   align-items: center;
   background-color: #252a31;
 }
+
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #00000000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 10px;
+  border: 3px solid #bababa;
+}
