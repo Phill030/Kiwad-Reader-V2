@@ -3,7 +3,7 @@
 
 use downloader::fetch_revisions;
 use fetcher::Fetcher;
-use tauri::generate_handler;
+use tauri::{generate_handler, Window};
 
 pub mod downloader;
 pub mod fetcher;
@@ -19,7 +19,8 @@ async fn get_revisions() -> Vec<String> {
 
 // TODO: Use https://github.com/oscartbeaumont/tauri-specta (https://github.com/tauri-apps/tauri/issues/1514)
 #[tauri::command]
-async fn fetch_files(revision: String) -> String {
+async fn fetch_files(revision: String, window: Window) -> String {
+    window.set_title(format!("Kiwad-Unpacker v2 - {}", revision).as_str()).unwrap();
     let fetcher = Fetcher::new(revision);
     let file_list = fetcher.fetch_filelist().await;
 
