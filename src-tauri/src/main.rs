@@ -1,11 +1,9 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use std::collections::VecDeque;
-
 use downloader::fetch_revisions;
-use fetcher::{Fetcher, File, LatestFiles};
-use tauri::{generate_handler, Window};
+use fetcher::Fetcher;
+use tauri::generate_handler;
 
 pub mod downloader;
 pub mod fetcher;
