@@ -5,4 +5,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    .left-content {
+        height: 100%;
+    }
+
+    .right-content {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+    }
 }
