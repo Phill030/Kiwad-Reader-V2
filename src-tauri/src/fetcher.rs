@@ -49,7 +49,7 @@ impl Fetcher {
                         let header_crc = r.header_crc.as_ref().unwrap().value;
 
                         wad_files.push_back(File {
-                            filename: filename.clone(),
+                            filename: filename.replace("Data/GameData/", "").replace(".wad", ""),
                             size,
                             header_size,
                             compressed_header_size,
