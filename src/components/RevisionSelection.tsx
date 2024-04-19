@@ -2,10 +2,8 @@ import { ItemRenderer, Select } from "@blueprintjs/select";
 import { Button, MenuItem } from "@blueprintjs/core";
 import { MouseEvent, useState } from "react";
 import "../scss/RevisionSelectionScreen.scss";
-import { invoke } from "@tauri-apps/api";
 
-
-  export default function RevisionSelection(props: any) {
+export default function RevisionSelection(props: any) {
   const [selectedRevision, setSelectedRevision] = useState<string | undefined>();
 
   const renderRevision: ItemRenderer<string> = (
