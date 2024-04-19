@@ -1,4 +1,6 @@
 .file-list {
-    height: 100%;
-    min-width: 30vh;
+  height: 100%;
+  width: calc(45vh + 5em);
+  overflow-y: auto;
+  border-right: 1px solid #616161;
 }
