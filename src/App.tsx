@@ -17,7 +17,14 @@ export default function App() {
 
   return (
     <div id="window" className="bp5-dark">
-      {!selectedRevision ? <RevisionSelection revisions={revisions} onRevisionSelected={handleRevisionSelect}/> : <RevisionView revision={selectedRevision}/>}
+      {!selectedRevision ? (
+        <RevisionSelection
+          revisions={revisions}
+          onRevisionSelected={handleRevisionSelect}
+        />
+      ) : (
+        <RevisionView revision={selectedRevision} />
+      )}
     </div>
   );
 }
